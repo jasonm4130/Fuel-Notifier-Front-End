@@ -53,21 +53,24 @@ const AppLink = styled.a`
 
 function App() {
   return (
-    <AppWrapper>
-      <AppHeader>
-        <AppLogo src={logo} alt="logo" />
-        <p>
-          Edit <Code>src/App.js</Code> and save to reload.
-        </p>
-        <AppLink
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </AppLink>
-      </AppHeader>
-    </AppWrapper>
+    <>
+      <GlobalStyle />
+      <AppWrapper>
+        <AppHeader>
+          <AppLogo src={logo} alt="logo" />
+          <p>
+            Edit <Code>src/App.js</Code> and save to reload.
+          </p>
+          <AppLink
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </AppLink>
+        </AppHeader>
+      </AppWrapper>
+    </>
   );
 }
 
