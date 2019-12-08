@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import Header from './components/header';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,62 +13,22 @@ const GlobalStyle = createGlobalStyle`
 
 const AppWrapper = styled.div`
   text-align: center;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "content"
+    "footer";
+  }
 `
-
-const Code = styled.code`
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-`
-
-const AppLogoSpin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const AppLogo = styled.img`
-  height: 40vmin;
-  pointer-events: none;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${AppLogoSpin} infinite 20s linear;
-  }
-`;
-
-const AppHeader = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
-
-const AppLink = styled.a`
-  color: #61dafb;
-`;
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <AppWrapper>
-        <AppHeader>
-          <AppLogo src={logo} alt="logo" />
-          <p>
-            Edit <Code>src/App.js</Code> and save to reload.
-          </p>
-          <AppLink
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </AppLink>
-        </AppHeader>
+        <Header />
       </AppWrapper>
     </>
   );
